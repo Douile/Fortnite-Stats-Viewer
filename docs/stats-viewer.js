@@ -11,8 +11,8 @@ var StatsViewer = {
   },
   body: document.body,
   sendListener: function(e) {
-    var key = this.key.value;
-    var name = this.name.value;
+    var key = StatsViewer.key.value;
+    var name = StatsViewer.name.value;
     var xhr = new XMLHttpRequest();
     xhr.open("GET","https://fortnite.y3n.co/v2/player/"+name);
     xhr.addEventListener("load",this.data);

@@ -20,7 +20,8 @@ var StatsViewer = {
     xhr.send();
   },
   data: function(e) {
-    console.log(e);
+    var json = JSON.parse(e.target.responseText);
+    console.log(json);
   }
 };
 

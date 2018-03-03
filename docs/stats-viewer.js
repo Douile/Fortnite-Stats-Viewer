@@ -21,7 +21,7 @@ var StatsViewer = {
   },
   data: function(e) {
     var json = JSON.parse(e.target.responseText);
-    console.log(json);
+    console.log(e,json);
   }
 };
 

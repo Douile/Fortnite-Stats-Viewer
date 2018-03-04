@@ -27,7 +27,7 @@ var StatsViewer = {
   },
   response(data) {
     var displayName = data.displayName;
-    var level = data.br.level;
+    var level = data.br.profile.level;
     var stats = data.br.stats;
     if (stats.pc) {
       stats = stats.pc;

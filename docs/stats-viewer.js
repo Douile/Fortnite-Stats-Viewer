@@ -20,7 +20,7 @@ var StatsViewer = {
   data: function(e) {
     var quota = e.headers.get("X-DayQuotaLeft");
     console.log(quota);
-    e.then(function(e) {console.log(e)});
+    e.json().then(function(e) {console.log(e)});
   }
 };
 

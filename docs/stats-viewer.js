@@ -13,16 +13,11 @@ var StatsViewer = {
   sendListener: function(e) {
     var key = StatsViewer.key.value;
     var name = StatsViewer.name.value;
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load",StatsViewer.data);
-    xhr.open("GET","https://fortnite.y3n.co/v2/player/"+name,true);
-    xhr.setRequestHeader("X-Key",key);
-    xhr.send();
+    var request = new Request("https://fortnite.y3n.co/v2/player/"+name,{headers:{"X-Key":key}});
+    fetch(request).then(StatsViewer.data);
   },
   data: function(e) {
-    var json = JSON.parse(e.target.responseText);
-    var quotaleft = e.target.getResponseHeader("X-DayQuotaLeft");
-    console.log(e,json,quotaleft);
+    console.log(e);
   }
 };
 

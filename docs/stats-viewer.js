@@ -21,8 +21,8 @@ var StatsViewer = {
   },
   data: function(e) {
     var json = JSON.parse(e.target.responseText);
-    //var quotaleft = e.target.getRequestHeader("X-DayQuotaLeft");
-    console.log(e,json);
+    var quotaleft = e.target.getResponseHeader("X-DayQuotaLeft");
+    console.log(e,json,quotaleft);
   }
 };
 

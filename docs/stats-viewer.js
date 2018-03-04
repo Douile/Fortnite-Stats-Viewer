@@ -20,7 +20,23 @@ var StatsViewer = {
   data: function(e) {
     var quota = e.headers.get("X-DayQuotaLeft");
     console.log(quota);
-    e.json().then(function(e) {console.log(e)});
+    if (quota != null) {
+      StatsViewer.quota = quota;
+    }
+    e.json().then(StatsViewer.response);
+  },
+  response(data) {
+    var displayName = data.displayName;
+    var level = data.br.level;
+    var stats = data.br.stats;
+    if (stats.pc) {
+      stats = stats.pc;
+    } else if (stats.ps4) {
+      stats = stats.ps4;
+    } else if (stats.xb1) {
+      stats = stats.xb1;
+    }
+    console.log(displayName,level,stats);
   }
 };
 

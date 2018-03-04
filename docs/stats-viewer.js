@@ -15,7 +15,7 @@ var StatsViewer = {
     var name = StatsViewer.name.value;
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("load",StatsViewer.data);
-    xhr.open("GET","https://fortnite.y3n.co/v2/player/"+name);
+    xhr.open("GET","https://fortnite.y3n.co/v2/player/"+name,true);
     xhr.setRequestHeader("X-Key",key);
     xhr.send();
   },

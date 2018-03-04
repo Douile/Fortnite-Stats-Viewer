@@ -9,6 +9,7 @@ var StatsViewer = {
     
     this.send.addEventListener("click",this.sendListener);
   },
+  quota: 2000,
   body: document.body,
   sendListener: function(e) {
     var key = StatsViewer.key.value;
@@ -17,7 +18,9 @@ var StatsViewer = {
     fetch(request).then(StatsViewer.data);
   },
   data: function(e) {
-    console.log(e);
+    var quota = e.headers.get("X-DayQuotaLeft");
+    console.log(quota);
+    e.then(function(e) {console.log(e)});
   }
 };
 
